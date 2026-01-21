@@ -20,6 +20,32 @@
             transform: rotate(180deg);
         }
         
+        /* Header Navigation Hover Effect */
+        nav a[data-t] {
+            position: relative;
+            text-decoration: none;
+        }
+        nav a[data-t]::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #926d27;
+            transition: width 0.3s ease;
+        }
+        [dir="rtl"] nav a[data-t]::after {
+            left: auto;
+            right: 0;
+        }
+        nav a[data-t]:hover::after {
+            width: 100%;
+        }
+        nav a[data-t]:hover {
+            font-weight: 600;
+        }
+
         /* Accessibility Focus States */
         a:focus, button:focus, input:focus, select:focus, textarea:focus {
             outline: 3px solid #926d27;
