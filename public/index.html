@@ -21,11 +21,11 @@
         }
         
         /* Header Navigation Hover Effect */
-        nav a[data-t] {
+        nav a[data-t]:not(.bg-stone-900) {
             position: relative;
             text-decoration: none;
         }
-        nav a[data-t]::after {
+        nav a[data-t]:not(.bg-stone-900)::after {
             content: '';
             position: absolute;
             width: 0;
@@ -35,14 +35,14 @@
             background-color: #926d27;
             transition: width 0.3s ease;
         }
-        [dir="rtl"] nav a[data-t]::after {
+        [dir="rtl"] nav a[data-t]:not(.bg-stone-900)::after {
             left: auto;
             right: 0;
         }
-        nav a[data-t]:hover::after {
+        nav a[data-t]:not(.bg-stone-900):hover::after {
             width: 100%;
         }
-        nav a[data-t]:hover {
+        nav a[data-t]:not(.bg-stone-900):hover {
             font-weight: 600;
         }
 
