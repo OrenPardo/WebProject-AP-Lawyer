@@ -1,39 +1,115 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he" dir="rtl" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>מדיניות פרטיות | אלון פרדו</title>
+    <title data-t="privacy_title">מדיניות פרטיות | אלון פרדו</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Assistant', sans-serif; }
+        h1, h2 { font-family: 'Playfair Display', 'Assistant', serif; }
+        .hero-gradient { background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%); }
         .text-gold { color: #926d27; }
+        .bg-gold { background-color: #926d27; }
     </style>
 </head>
 <body class="bg-stone-50 text-stone-900 leading-relaxed">
-    <nav class="bg-white border-b border-stone-200 py-4 px-6">
-        <div class="max-w-4xl mx-auto flex justify-between items-center">
-            <a href="/" class="text-xl font-bold tracking-tighter">אלון <span class="text-gold">פרדו</span></a>
-            <a href="/" class="text-sm font-bold uppercase tracking-widest hover:text-gold transition">חזרה לדף הבית</a>
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200 py-4 px-6">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="/" class="text-xl font-bold tracking-tighter" data-t="brand_name">ALON <span class="text-gold">PARDO</span></a>
+            <a href="/" class="bg-stone-900 text-white px-6 py-2 text-sm uppercase tracking-widest hover:bg-gold transition" data-t="back_home">חזרה לדף הבית</a>
         </div>
     </nav>
-    <main class="max-w-4xl mx-auto px-6 py-16">
-        <h1 class="text-4xl font-bold mb-8">מדיניות פרטיות</h1>
-        <div class="space-y-6">
-            <section>
-                <h2 class="text-2xl font-bold mb-4">1. כללי</h2>
-                <p>מדיניות פרטיות זו מתארת כיצד נאסף, נעשה שימוש ונשמר המידע שלך בעת השימוש באתר של עו"ד אלון פרדו.</p>
-            </section>
-            <section>
-                <h2 class="text-2xl font-bold mb-4">2. איסוף מידע</h2>
-                <p>אנו אוספים מידע שאתה מספק לנו ישירות דרך טופס היצירת קשר, כגון שם, כתובת אימייל ופרטי המקרה המשפטי.</p>
-            </section>
-            <section>
-                <h2 class="text-2xl font-bold mb-4">3. שימוש במידע</h2>
-                <p>המידע משמש אך ורק לצורך יצירת קשר ומתן ייעוץ משפטי ראשוני לבקשתך.</p>
-            </section>
+
+    <main class="pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-6">
+            <header class="mb-16">
+                <h1 class="text-4xl md:text-5xl mb-4" data-t="privacy_header">מדיניות פרטיות</h1>
+                <div class="h-1 w-20 bg-gold"></div>
+            </header>
+
+            <div class="space-y-12 text-stone-700">
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-stone-900" data-t="p_sec1_title">1. כללי</h2>
+                    <p data-t="p_sec1_desc">מדיניות פרטיות זו מתארת כיצד נאסף, נעשה שימוש ונשמר המידע שלך בעת השימוש באתר של עו"ד אלון פרדו.</p>
+                </section>
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-stone-900" data-t="p_sec2_title">2. איסוף מידע</h2>
+                    <p data-t="p_sec2_desc">אנו אוספים מידע שאתה מספק לנו ישירות דרך טופס היצירת קשר, כגון שם, כתובת אימייל ופרטי המקרה המשפטי.</p>
+                </section>
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-stone-900" data-t="p_sec3_title">3. שימוש במידע</h2>
+                    <p data-t="p_sec3_desc">המידע משמש אך ורק לצורך יצירת קשר ומתן ייעוץ משפטי ראשוני לבקשתך.</p>
+                </section>
+                <section>
+                    <h2 class="text-2xl font-bold mb-4 text-stone-900" data-t="p_sec4_title">4. אבטחת מידע</h2>
+                    <p data-t="p_sec4_desc">אנו נוקטים באמצעי אבטחה סבירים כדי להגן על המידע האישי שלך מפני גישה לא מורשית.</p>
+                </section>
+            </div>
         </div>
     </main>
+
+    <footer class="py-12 bg-stone-950 text-stone-600 border-t border-stone-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-xl font-bold tracking-tighter text-white mb-4" data-t="brand_name">ALON <span class="text-gold">PARDO</span></div>
+            <div class="text-xs uppercase tracking-widest" data-t="footer_copy">&copy; 2026 אלון פרדו. כל הזכויות שמורות.</div>
+        </div>
+    </footer>
+
+    <script>
+        const translations = {
+            en: {
+                brand_name: 'ALON <span class="text-gold">PARDO</span>',
+                back_home: 'Back to Home',
+                privacy_title: 'Privacy Policy | Alon Pardo',
+                privacy_header: 'Privacy Policy',
+                p_sec1_title: '1. General',
+                p_sec1_desc: 'This privacy policy describes how your information is collected, used, and maintained when using the website of attorney Alon Pardo.',
+                p_sec2_title: '2. Information Collection',
+                p_sec2_desc: 'We collect information that you provide to us directly through the contact form, such as name, email address, and legal case details.',
+                p_sec3_title: '3. Use of Information',
+                p_sec3_desc: 'The information is used solely for the purpose of contacting you and providing initial legal consultation at your request.',
+                p_sec4_title: '4. Information Security',
+                p_sec4_desc: 'We take reasonable security measures to protect your personal information from unauthorized access.',
+                footer_copy: '&copy; 2026 Alon Pardo. All rights reserved.'
+            },
+            he: {
+                brand_name: 'אלון <span class="text-gold">פרדו</span>',
+                back_home: 'חזרה לדף הבית',
+                privacy_title: 'מדיניות פרטיות | אלון פרדו',
+                privacy_header: 'מדיניות פרטיות',
+                p_sec1_title: '1. כללי',
+                p_sec1_desc: 'מדיניות פרטיות זו מתארת כיצד נאסף, נעשה שימוש ונשמר המידע שלך בעת השימוש באתר של עו"ד אלון פרדו.',
+                p_sec2_title: '2. איסוף מידע',
+                p_sec2_desc: 'אנו אוספים מידע שאתה מספק לנו ישירות דרך טופס היצירת קשר, כגון שם, כתובת אימייל ופרטי המקרה המשפטי.',
+                p_sec3_title: '3. שימוש במידע',
+                p_sec3_desc: 'המידע משמש אך ורק לצורך יצירת קשר ומתן ייעוץ משפטי ראשוני לבקשתך.',
+                p_sec4_title: '4. אבטחת מידע',
+                p_sec4_desc: 'אנו נוקטים באמצעי אבטחה סבירים כדי להגן על המידע האישי שלך מפני גישה לא מורשית.',
+                footer_copy: '&copy; 2026 אלון פרדו. כל הזכויות שמורות.'
+            }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentLang = urlParams.get('lang') || 'he';
+
+        function updateContent() {
+            document.querySelectorAll('[data-t]').forEach(el => {
+                const key = el.getAttribute('data-t');
+                if (translations[currentLang][key]) {
+                    el.innerHTML = translations[currentLang][key];
+                }
+            });
+            const html = document.getElementById('html-tag');
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'he' ? 'rtl' : 'ltr');
+            
+            // Update back home link to preserve language
+            document.querySelector('[data-t="back_home"]').href = `/?lang=${currentLang}`;
+            document.querySelector('[data-t="brand_name"]').href = `/?lang=${currentLang}`;
+        }
+        updateContent();
+    </script>
 </body>
 </html>

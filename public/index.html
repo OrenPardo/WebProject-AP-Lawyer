@@ -369,6 +369,12 @@
             const footerCopy = document.getElementById('footer-copy-wrapper');
             const footerActions = document.getElementById('footer-actions-wrapper');
 
+            // Update footer links to preserve language
+            document.querySelectorAll('[href="/privacy.html"], [href="/legal.html"]').forEach(link => {
+                const baseHref = link.getAttribute('href').split('?')[0];
+                link.setAttribute('href', `${baseHref}?lang=${currentLang}`);
+            });
+
             if (currentLang === 'en') {
                 // English: Alon Pardo leftmost, buttons next, copyright rightmost
                 footerContainer.classList.remove('justify-between');
@@ -393,6 +399,9 @@
 
         document.getElementById('lang-toggle').addEventListener('click', () => {
             currentLang = currentLang === 'en' ? 'he' : 'en';
+            // Update URL query param without reload
+            const newUrl = window.location.protocol + "//" + window.location.host + window.location.pathname + '?lang=' + currentLang;
+            window.history.pushState({path:newUrl},'',newUrl);
             updateContent();
         });
     </script>
