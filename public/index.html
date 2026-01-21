@@ -15,6 +15,11 @@
         .bg-gold { background-color: #926d27; } /* Improved contrast WCAG AA (4.5:1+) */
         .text-gold { color: #926d27; } /* Improved contrast WCAG AA (4.5:1+) */
         
+        /* Select Arrow Animation */
+        .select-open .select-arrow {
+            transform: rotate(180deg);
+        }
+        
         /* Accessibility Focus States */
         a:focus, button:focus, input:focus, select:focus, textarea:focus {
             outline: 3px solid #926d27;
@@ -170,16 +175,23 @@
                     <label for="email-address" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_email">Email Address</label>
                     <input type="email" id="email-address" name="email-address" required class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition">
                 </div>
-                <div class="md:col-span-2">
+                <div class="md:col-span-2 relative">
                     <label for="case-type" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_case_type">Case Type</label>
-                    <select id="case-type" name="case-type" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none">
-                        <option data-t="opt_criminal">Criminal Law</option>
-                        <option data-t="opt_transport">Transport Law</option>
-                        <option data-t="opt_admin">Administrative Law</option>
-                        <option data-t="opt_labour">Labour Law</option>
-                        <option data-t="opt_accessibility">Accessibility Law</option>
-                        <option data-t="opt_other">Other Enquiry</option>
-                    </select>
+                    <div class="relative">
+                        <select id="case-type" name="case-type" class="w-full bg-stone-800 border-stone-700 border p-4 focus:border-gold outline-none transition appearance-none cursor-pointer" onfocus="this.parentElement.classList.add('select-open')" onblur="this.parentElement.classList.remove('select-open')">
+                            <option data-t="opt_criminal">Criminal Law</option>
+                            <option data-t="opt_transport">Transport Law</option>
+                            <option data-t="opt_admin">Administrative Law</option>
+                            <option data-t="opt_labour">Labour Law</option>
+                            <option data-t="opt_accessibility">Accessibility Law</option>
+                            <option data-t="opt_other">Other Enquiry</option>
+                        </select>
+                        <div class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 flex items-center px-4 pointer-events-none transition-transform duration-300 select-arrow">
+                            <svg class="w-4 h-4 text-stone-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </div>
+                    </div>
                 </div>
                 <div class="md:col-span-2">
                     <label for="message-summary" class="block text-xs uppercase tracking-widest text-stone-500 mb-2" data-t="form_message">Message Summary</label>
