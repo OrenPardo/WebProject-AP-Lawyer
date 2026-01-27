@@ -61,7 +61,7 @@
     <!-- Navigation -->
     <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-stone-200" aria-label="Main Navigation">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <button onclick="window.location.href='/'+(lang === 'en' ? '?lang=en' : '')" class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" id="brand-link" aria-label="Back to home">ALON <span class="text-gold">PARDO</span></button>
+            <button class="text-2xl font-bold tracking-tighter hover:text-gold transition focus:outline-none text-left rtl:text-right" id="brand-link" aria-label="Back to home">ALON <span class="text-gold">PARDO</span></button>
             <div class="hidden md:flex space-x-8 font-medium uppercase tracking-widest rtl:space-x-reverse">
                 <a href="/#expertise" class="hover:text-gold transition" id="nav-expertise">תחומי עיסוק</a>
                 <a href="/#about" class="hover:text-gold transition" id="nav-philosophy">איך אני עובד</a>
@@ -428,7 +428,11 @@
                 }
             });
 
-            document.getElementById('back-link').textContent = content[lang].back;
+            // Set up brand link click handler
+            document.getElementById('brand-link').onclick = function() {
+                window.location.href = '/' + (lang === 'en' ? '?lang=en' : '');
+            };
+            
             document.getElementById('nav-contact-button').textContent = content[lang].cta_button_nav;
             document.getElementById('nav-contact-button').href = `/${lang === 'en' ? '?lang=en' : ''}#contact`;
             document.getElementById('services-label').textContent = content[lang].services_label;
@@ -505,10 +509,11 @@
             });
         }
 
+        // Set up language toggle
         const langToggle = document.getElementById('lang-toggle');
         if (langToggle) {
             langToggle.textContent = lang === 'he' ? 'EN' : 'HE';
-            langToggle.addEventListener('click', () => {
+            langToggle.onclick = function() {
                 const newLang = lang === 'he' ? 'en' : 'he';
                 const url = new URL(window.location.href);
                 if (newLang === 'en') {
@@ -516,8 +521,8 @@
                 } else {
                     url.searchParams.delete('lang');
                 }
-                window.location.href = url.pathname + url.search + url.hash;
-            });
+                window.location.href = url.pathname + url.search;
+            };
         }
     </script>
 </body>
