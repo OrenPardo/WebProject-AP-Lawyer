@@ -429,9 +429,9 @@
             const heroTitle = document.querySelector('h1[data-t="hero_title"]');
             if (currentLang === 'he') {
                 heroTitle.classList.remove('text-5xl', 'md:text-7xl', 'leading-tight');
-                heroTitle.classList.add('text-[5.5rem]', 'leading-none');
+                heroTitle.classList.add('text-[4.5rem]', 'leading-none');
             } else {
-                heroTitle.classList.remove('text-[5.5rem]', 'leading-none');
+                heroTitle.classList.remove('text-[4.5rem]', 'leading-none');
                 heroTitle.classList.add('text-5xl', 'md:text-7xl', 'leading-tight');
             }
 
@@ -464,6 +464,16 @@
                     btn.classList.remove('text-[1.1rem]');
                 }
             });
+
+            // CTA note size for Hebrew
+            const ctaNote = document.querySelector('[data-t="hero_cta_note"]');
+            if (currentLang === 'he') {
+                ctaNote.classList.remove('text-sm');
+                ctaNote.classList.add('text-[1rem]');
+            } else {
+                ctaNote.classList.remove('text-[1rem]');
+                ctaNote.classList.add('text-sm');
+            }
 
             // Footer specific text sizes for Hebrew
             const footerCopyText = document.querySelector('#footer-copy-wrapper');
