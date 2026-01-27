@@ -475,6 +475,16 @@
                 ctaNote.classList.add('text-sm');
             }
 
+            // Flip expertise card arrows for Hebrew (RTL)
+            const expertiseArrows = document.querySelectorAll('#expertise .absolute svg');
+            expertiseArrows.forEach(arrow => {
+                if (currentLang === 'he') {
+                    arrow.classList.add('rotate-180');
+                } else {
+                    arrow.classList.remove('rotate-180');
+                }
+            });
+
             // Footer specific text sizes for Hebrew
             const footerCopyText = document.querySelector('#footer-copy-wrapper');
             const footerLegalLinks = document.querySelectorAll('#footer-actions-wrapper .text-xs');
