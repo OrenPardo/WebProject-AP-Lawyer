@@ -75,6 +75,25 @@
                 <div id="icon-container" class="mb-6 text-gold"></div>
                 <h1 id="expertise-title" class="text-5xl md:text-7xl mb-6"></h1>
                 <p id="expertise-desc" class="text-xl md:text-2xl text-stone-600 leading-relaxed max-w-2xl"></p>
+                <div id="expertise-scope" class="mt-8 text-stone-400 font-medium tracking-wide"></div>
+            </div>
+
+            <!-- New Sections for Criminal Law -->
+            <div id="criminal-sections" class="hidden space-y-16 mb-20">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="rtl:text-right">
+                        <h2 id="common-situations-title" class="text-3xl mb-6 text-stone-800"></h2>
+                        <ul id="common-situations-list" class="space-y-4 text-stone-600"></ul>
+                    </div>
+                    <div class="rtl:text-right">
+                        <h2 id="what-to-do-title" class="text-3xl mb-6 text-stone-800"></h2>
+                        <ul id="what-to-do-list" class="space-y-4 text-stone-600"></ul>
+                    </div>
+                </div>
+                <div class="rtl:text-right">
+                    <h2 id="how-i-help-title" class="text-3xl mb-6 text-stone-800"></h2>
+                    <ul id="how-i-help-list" class="grid md:grid-cols-2 gap-4 text-stone-600"></ul>
+                </div>
             </div>
             
             <div class="grid md:grid-cols-2 gap-12 mt-16 rtl:text-right">
@@ -84,10 +103,19 @@
                         <!-- Injected via JS -->
                     </ul>
                 </div>
-                <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm">
-                    <h3 class="text-xl mb-4" id="cta-title">Need Legal Advice?</h3>
-                    <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Schedule a confidential consultation to discuss your specific case requirements.</p>
-                    <a href="/#contact" class="inline-block border border-gold text-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition w-full text-center" id="cta-button-secondary">Consultation Request</a>
+                <div class="bg-stone-50 border border-stone-200 p-8 rounded-sm text-center">
+                    <h3 class="text-2xl mb-4" id="cta-title">Speak to a Lawyer</h3>
+                    <p class="text-stone-600 mb-6 text-sm" id="cta-desc">Send 2-3 sentences and I'll reply as fast as I can with the next steps.</p>
+                    <a href="/#contact" class="inline-block border border-gold text-gold px-8 py-4 font-bold uppercase tracking-widest hover:bg-gold hover:text-white transition w-full text-center" id="cta-button-secondary">Request a Consultation</a>
+                    <p id="cta-microcopy" class="mt-3 text-stone-400 text-xs"></p>
+                    
+                    <div id="urgent-contact" class="mt-8 border-t border-stone-200 pt-6">
+                        <p id="urgent-label" class="text-stone-500 text-sm mb-3"></p>
+                        <a href="https://wa.me/972524203401" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 text-white px-6 py-3 rounded-full hover:bg-green-500 transition font-medium">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                            <span id="whatsapp-btn-text">WhatsApp</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -97,34 +125,93 @@
         const content = {
             en: {
                 back: "Back to Home",
-                services_label: "Professional Services",
-                cta_title: "Need Legal Advice?",
-                cta_desc: "Schedule a confidential consultation to discuss your specific case requirements.",
+                services_label: "Services",
+                cta_title: "Speak to a Lawyer",
+                cta_desc: "Send 2-3 sentences and I'll reply as fast as I can with the next steps.",
                 cta_button_nav: "Book a Consultation",
-                cta_button_sec: "Consultation Request",
+                cta_button_sec: "Request a Consultation",
+                cta_microcopy: "Confidential • You speak with Alon directly • No obligation",
+                urgent_label: "For urgent matters you can contact me using WhatsApp",
+                whatsapp_btn: "WhatsApp",
                 brand: 'ALON <span class="text-gold">PARDO</span>'
             },
             he: {
                 back: "חזרה לדף הבית",
-                services_label: "שירותים מקצועיים",
-                cta_title: "זקוק לייעוץ משפטי?",
-                cta_desc: "קבע ייעוץ חסוי לדיון בדרישות המקרה הספציפיות שלך.",
+                services_label: "שירותים",
+                cta_title: "דברו איתי",
+                cta_desc: "שלחו 2-3 משפטים ואחזור אליכם מהר ככל האפשר עם הצעדים הבאים.",
                 cta_button_nav: "לקביעת ייעוץ משפטי",
-                cta_button_sec: "בקשה לייעוץ",
+                cta_button_sec: "לקביעת שיחת ייעוץ",
+                cta_microcopy: "חסוי • מדברים איתי ישירות • ללא התחייבות",
+                urgent_label: "לעניינים דחופים ניתן לפנות אליי בוואטסאפ",
+                whatsapp_btn: "וואטסאפ",
                 brand: 'אלון <span class="text-gold">פרדו</span>'
             }
         };
 
         const pages = {
             criminal: {
-                title: { en: "Criminal Law", he: "משפט פלילי" },
+                title: { en: "Criminal Defense Lawyer", he: "עורך דין פלילי" },
                 desc: { 
-                    en: "Robust defense strategies for individuals and businesses facing criminal allegations. We provide comprehensive representation through all stages of the criminal process.", 
+                    en: "Robust defense for individuals and businesses facing criminal allegations. Clear strategy, direct representation, and fast next steps.", 
                     he: "אסטרטגיות הגנה חזקות ליחידים ועסקים העומדים בפני אישומים פליליים. אנו מספקים ייצוג מקיף לאורך כל שלבי ההליך הפלילי." 
                 },
+                scope: {
+                    en: "Police questioning • Arrest/detention • Indictments & bail • Searches & seizures • Appeals",
+                    he: "חקירות משטרה • מעצרים • כתבי אישום ושחרור בערובה • חיפושים ותפיסות • ערעורים"
+                },
+                common_situations_title: { en: "Common situations I handle", he: "מצבים נפוצים בהם אני מטפל" },
+                common_situations: {
+                    en: [
+                        "Police questioning / invitation to interrogation",
+                        "Arrest, detention, or bail hearing",
+                        "Indictment filed or expected",
+                        "Search warrant, phone seizure, or property seizure",
+                        "Plea negotiations / sentencing stage",
+                        "Appeal or post-conviction relief"
+                    ],
+                    he: [
+                        "חקירה במשטרה / זימון לחקירה",
+                        "מעצר, הארכת מעצר או דיון שחרור בערובה",
+                        "הגשת כתב אישום (או צפי להגשה)",
+                        "צו חיפוש, תפיסת טלפון או רכוש",
+                        "משא ומתן להסדר טיעון / שלב הטיעונים לעונש",
+                        "ערעור פלילי או בקשה למשפט חוזר"
+                    ]
+                },
+                what_to_do_title: { en: "What to do now", he: "מה לעשות עכשיו?" },
+                what_to_do: {
+                    en: [
+                        "If police contacted you: <strong>do not give a statement before legal advice.</strong>",
+                        "Collect key documents/messages and note dates/times.",
+                        "Send a short summary below — I’ll reply with next steps."
+                    ],
+                    he: [
+                        "אם המשטרה יצרה קשר: <strong>אל תמסרו גרסה לפני ייעוץ משפטי.</strong>",
+                        "אספו מסמכים/הודעות רלוונטיים וציינו תאריכים ושעות.",
+                        "שלחו סיכום קצר למטה - אחזור אליכם עם צעדים להמשך."
+                    ]
+                },
+                how_i_help_title: { en: "How I help", he: "איך אני עוזר?" },
+                how_i_help: {
+                    en: [
+                        "Case assessment: risks, defenses, and best legal path",
+                        "Strategy and preparation before any statement or hearing",
+                        "Representation in investigations, hearings, and negotiations",
+                        "Evidence review: timelines, documents, contradictions",
+                        "Clear expectations and transparent fees upfront"
+                    ],
+                    he: [
+                        "הערכת תיק: סיכונים, הגנות והמסלול המשפטי הטוב ביותר",
+                        "אסטרטגיה והכנה לפני כל עדות או דיון",
+                        "ייצוג בחקירות, דיונים ומשא ומתן",
+                        "סקירת ראיות: לוחות זמנים, מסמכים וסתירות",
+                        "ציפיות ברורות ושכר טרחה שקוף מראש"
+                    ]
+                },
                 services: {
-                    en: ["White Collar Defense", "Felony & Misdemeanor", "Appeals & Post-Conviction", "Police Investigation Support"],
-                    he: ["עבירות צווארון לבן", "פשעים ועוונות", "ערעורים לאחר הרשעה", "ליווי בחקירות משטרה"]
+                    en: ["Police investigation support", "Detention & bail hearings", "Indictments & plea negotiations", "White-collar defense", "Appeals & post-conviction"],
+                    he: ["ליווי בחקירות משטרה", "דיוני מעצר ושחרור בערובה", "כתבי אישום והסדרי טיעון", "עבירות צווארון לבן", "ערעורים ומשפט חוזר"]
                 },
                 icon: `<svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M3 6l3 1m0 0l-3 9a5.002 5.002 0 006.001 0M6 7l3 9M6 7l6-2m6 2l3-1m-3 1l-3 9a5.002 5.002 0 006.001 0M18 7l3 9m-3-9l-6-2m0-2v2m0 16V5m0 16H9m3 0h3"></path></svg>`
             },
@@ -227,11 +314,56 @@
             document.getElementById('cta-desc').textContent = content[lang].cta_desc;
             document.getElementById('cta-button-secondary').textContent = content[lang].cta_button_sec;
             document.getElementById('cta-button-secondary').href = `/${lang === 'en' ? '?lang=en' : ''}#contact`;
+            document.getElementById('cta-microcopy').textContent = content[lang].cta_microcopy;
+            document.getElementById('urgent-label').textContent = content[lang].urgent_label;
+            document.getElementById('whatsapp-btn-text').textContent = content[lang].whatsapp_btn;
 
             document.getElementById('expertise-title').textContent = page.title[lang];
             document.getElementById('expertise-desc').textContent = page.desc[lang];
             document.getElementById('icon-container').innerHTML = page.icon.replace('<svg', '<svg class="w-16 h-16"');
             document.getElementById('expertise-background').innerHTML = page.icon;
+
+            // Handle criminal-specific content
+            const criminalSections = document.getElementById('criminal-sections');
+            const expertiseScope = document.getElementById('expertise-scope');
+            
+            if (type === 'criminal') {
+                criminalSections.classList.remove('hidden');
+                expertiseScope.textContent = page.scope[lang];
+                
+                document.getElementById('common-situations-title').textContent = page.common_situations_title[lang];
+                const situationsList = document.getElementById('common-situations-list');
+                situationsList.innerHTML = '';
+                page.common_situations[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    situationsList.appendChild(li);
+                });
+
+                document.getElementById('what-to-do-title').textContent = page.what_to_do_title[lang];
+                const whatToDoList = document.getElementById('what-to-do-list');
+                whatToDoList.innerHTML = '';
+                page.what_to_do[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    whatToDoList.appendChild(li);
+                });
+
+                document.getElementById('how-i-help-title').textContent = page.how_i_help_title[lang];
+                const howIHelpList = document.getElementById('how-i-help-list');
+                howIHelpList.innerHTML = '';
+                page.how_i_help[lang].forEach(item => {
+                    const li = document.createElement('li');
+                    li.className = 'flex items-start gap-3';
+                    li.innerHTML = `<span class="mt-1.5 w-1.5 h-1.5 bg-gold rounded-full flex-shrink-0"></span><span>${item}</span>`;
+                    howIHelpList.appendChild(li);
+                });
+            } else {
+                criminalSections.classList.add('hidden');
+                expertiseScope.textContent = '';
+            }
 
             const list = document.getElementById('services-list');
             list.innerHTML = '';
