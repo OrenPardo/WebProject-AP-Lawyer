@@ -12,6 +12,27 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+// SEO-friendly practice area routes
+app.get('/practice/criminal-lawyer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/practice/traffic-lawyer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/practice/administrative-lawyer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/practice/employment-lawyer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
+app.get('/practice/accessibility-lawyer', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'expertise.html'));
+});
+
 app.listen(PORT, '0.0.0.0', () => {
     console.log(`Server is running on http://0.0.0.0:${PORT}`);
 });

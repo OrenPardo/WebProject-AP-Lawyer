@@ -29,9 +29,20 @@ Preferred communication style: Simple, everyday language.
 ├── server.js          # Express server entry point
 ├── package.json       # Node.js dependencies and scripts
 ├── public/
-│   └── index.html     # Main landing page
+│   ├── index.html     # Main landing page
+│   └── expertise.html # Practice area pages (served via SEO-friendly routes)
 └── main.py            # Empty (unused Python file)
 ```
+
+### SEO-Friendly URL Routes
+Practice area pages use clean URLs for better SEO:
+- `/practice/criminal-lawyer` → Criminal Law
+- `/practice/traffic-lawyer` → Traffic Law
+- `/practice/administrative-lawyer` → Administrative Law
+- `/practice/employment-lawyer` → Employment Law
+- `/practice/accessibility-lawyer` → Accessibility Law
+
+All routes serve `expertise.html` which detects the page type from the URL path.
 
 ### Design Decisions
 - **Why Express over pure static hosting**: Allows for future API endpoints or server-side logic if needed (e.g., contact form processing)

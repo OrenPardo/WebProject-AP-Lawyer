@@ -584,8 +584,17 @@
             }
         };
 
+        // Detect type from SEO-friendly URL path
+        const pathToType = {
+            '/practice/criminal-lawyer': 'criminal',
+            '/practice/traffic-lawyer': 'transport',
+            '/practice/administrative-lawyer': 'admin',
+            '/practice/employment-lawyer': 'labour',
+            '/practice/accessibility-lawyer': 'accessibility'
+        };
         const urlParams = new URLSearchParams(window.location.search);
-        const type = urlParams.get('type') || 'criminal';
+        const pathType = pathToType[window.location.pathname];
+        const type = pathType || urlParams.get('type') || 'criminal';
         const lang = urlParams.get('lang') || 'he';
         const page = pages[type];
 
