@@ -191,6 +191,15 @@
                     brandBtn.classList.add('text-2xl');
                 }
             }
+            if (footerBrand) {
+                if (currentLang === 'he') {
+                    footerBrand.classList.remove('text-xl');
+                    footerBrand.classList.add('text-[2.0rem]');
+                } else {
+                    footerBrand.classList.remove('text-[2.0rem]');
+                    footerBrand.classList.add('text-xl');
+                }
+            }
         }
         updateContent();
 
