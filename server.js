@@ -13,7 +13,15 @@ app.use(express.static(path.join(__dirname, 'public')));
 // Contact form email endpoint
 // Required env vars: SMTP_USER (Gmail address), SMTP_PASS (Gmail App Password)
 app.post('/api/contact', async (req, res) => {
-    const { name, phone, caseType, email, message, lang } = req.body;
+    const { name, phone, caseType, email, message, lang } = req.body || {};
+
+    const required = { name, phone, caseType };
+    const missing = Object.entries(required)
+        .filter(([, v]) => v == null || String(v).trim() === '')
+        .map(([k]) => k);
+    if (missing.length) {
+        return res.status(400).json({ ok: false, error: 'Missing required fields', fields: missing });
+    }
 
     if (!process.env.SMTP_PASS) {
         console.warn('SMTP_PASS not configured – email skipped');
@@ -41,7 +49,7 @@ app.post('/api/contact', async (req, res) => {
                 <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">${isHe ? 'טלפון' : 'Phone'}</td><td style="padding:8px;border-bottom:1px solid #eee">${phone}</td></tr>
                 <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">${isHe ? 'סוג התיק' : 'Case Type'}</td><td style="padding:8px;border-bottom:1px solid #eee">${caseType}</td></tr>
                 ${email ? `<tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee">${isHe ? 'אימייל' : 'Email'}</td><td style="padding:8px;border-bottom:1px solid #eee">${email}</td></tr>` : ''}
-                <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;vertical-align:top">${isHe ? 'פרטים' : 'Message'}</td><td style="padding:8px;border-bottom:1px solid #eee">${message.replace(/\n/g, '<br>')}</td></tr>
+                <tr><td style="padding:8px;font-weight:bold;border-bottom:1px solid #eee;vertical-align:top">${isHe ? 'פרטים' : 'Message'}</td><td style="padding:8px;border-bottom:1px solid #eee">${(message ?? '').replace(/\n/g, '<br>')}</td></tr>
             </table>
         </div>`;
 
