@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Next.js build output
+.next/
+
 # Environment variables
 .env
 .env.*
@@ -12,13 +15,6 @@ node_modules/
 .DS_Store
 Thumbs.db
 
-# IDE
-.vscode/
-.idea/
-
-# Replit
-.replit
-replit.nix
-
-# Claude Code
+# Local IDE/editor configuration
 .claude/
+.vscode/

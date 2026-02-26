@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /api/
 
-Sitemap: https://YOURDOMAIN.com/sitemap.xml
+Sitemap: https://www.alon-pardo.co.il/sitemap.xml
